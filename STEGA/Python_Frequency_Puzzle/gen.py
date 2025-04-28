@@ -2,8 +2,8 @@ import numpy as np
 from scipy.io import wavfile
 
 SAMPLE_RATE = 44100
-DURATION = 15  # Longer for better frequency resolution
-BASE_FREQ = 1000  # Anchor frequency
+DURATION = 15  
+BASE_FREQ = 1000 
 FLAG = "MED{4ud10_573g0gr4phy_15_4w350m3_4nd_fun}"
 
 t = np.linspace(0, DURATION, SAMPLE_RATE * DURATION)

@@ -1,8 +1,13 @@
 import os
 import numpy as np
 
-FLAG = "MED{m3m0ry_forens1cs_1s_fun}"  
-DUMP_SIZE = 2 * 1024 * 1024  # 2MB "memory dump"
+FLAG = "MED{m3m0ry_15_4_5c13n7ific_4r7f4c7}"  
+FAKE_FLAGS = [
+    "MED{f4k3_fl4g_1}",
+    "MED{f4k3_fl4g_2}",
+    "MED{f4k3_fl4g_3}"
+]
+DUMP_SIZE = 2 * 1024 * 1024
 
 # 1. Create a fake memory dump with random data
 dump = np.random.bytes(DUMP_SIZE)
@@ -14,15 +19,21 @@ elf_header = (
 )
 dump = elf_header + dump[len(elf_header):]
 
-# 3. Hide flag in XOR-encrypted heap section
+xor_key_fake = 0x55
+for fake_flag in FAKE_FLAGS:
+    fake_offset = np.random.randint(0x20000, DUMP_SIZE - len(fake_flag))
+    encrypted_fake_flag = bytes([ord(c) ^ xor_key_fake for c in fake_flag])
+    dump = dump[:fake_offset] + encrypted_fake_flag + dump[fake_offset + len(encrypted_fake_flag):]
+
 heap_start = 0x10000
-xor_key = 0xAA
-encrypted_flag = bytes([ord(c) ^ xor_key for c in FLAG])
+xor_key_real = 0xAA
+encrypted_flag = bytes([ord(c) ^ xor_key_real for c in FLAG])
 dump = dump[:heap_start] + encrypted_flag + dump[heap_start + len(encrypted_flag):]
 
-# 4. Save as "corrupted_dump.bin"
+# 5. Save as "corrupted_dump.bin"
 with open("corrupted_dump.bin", "wb") as f:
     f.write(dump)
 
 print("[+] Generated 'corrupted_dump.bin'")
-print(f"[+] Flag hidden at offset 0x{heap_start:04x} (XOR key: 0x{xor_key:02x})")
+print(f"[+] Real flag hidden at offset 0x{heap_start:04x} (XOR key: 0x{xor_key_real:02x})")
+print(f"[+] Fake flags XOR-encoded with key 0x{xor_key_fake:02x}")
