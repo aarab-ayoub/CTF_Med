@@ -48,20 +48,17 @@
 - **Skills**: Reverse image search, darknet navigation.  
 - **Hint**: "The site sells 'rare books'."  
 
-**Challenge 2: Real Madrid Riddle (Easy)**  //TODO
-- **Description**: "What is the name of Real Madrid’s stadium before 2023?" Flag: `MED{<answer>}`.  
-- **Skills**: Quick Google search.  
+<!-- **Challenge 2: Real Madrid Riddle (Easy)**  //TODO -->
+<!-- - **Description**: "What is the name of Real Madrid’s stadium before 2023?" Flag: `MED{<answer>}`.   -->
+<!-- - **Skills**: Quick Google search.   -->
 
-**Challenge 3: Google Map Location (Hard)**  //TODO
-- **Description**: A photo (`location.jpg`) with geotags removed. Find coordinates using shadows/landmarks.  
-- **Skills**: Geolocation, Google Earth.  
-- **Hint**: "The building has a red roof."  
+**Challenge 3: "The Lost Expedition"** // DONE
+- **Description: titanic. Format: MED{XX.XXXXXX,-XX.XXXXXX}."**
 
-**Challenge 4: Twitter Clue (Medium)**  //TODO
+<!-- **Challenge 4: Twitter Clue (Medium)**  //TODO  by n0rrdin
 - **Description**: A deleted tweet from `@CTF_HintMaster` contained the flag. Find it via archive.org.  
-- **Skills**: Wayback Machine, tweet archiving.  
+- **Skills**: Wayback Machine, tweet archiving.   -->
 
----
 
 ### **Bonus Challenges (Flexible Categories)**
 - **DFIR**: "Log Analysis" (Apache logs with hidden flag).  
@@ -69,3 +66,6 @@
 - **OSINT**: "Email Tracing" (Find the flag in a leaked email dump).  
 
 ---
+
+
+
