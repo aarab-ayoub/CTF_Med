@@ -36,9 +36,9 @@
 - **Skills**: API interaction, automation.  
 - **Hint**: "The bot responds to `/start` and `/solve <answer>`."  
 
-**Challenge 4: Expanding Image (Hard)**  //TODO
-- **Description**: A seemingly tiny image (`tiny.jpg`) expands to reveal the flag when resized.  
-- **Skills**: Hex editing, image forensics.  
+**Challenge 4: STARS**  // DONE
+- **Description**: "An amateur astronomer captured this starfield, but the patterns seem... intentional. What’s hidden in the void?".  
+
 
 ---
 
