@@ -233,15 +233,8 @@
   <text x="670" y="190" text-anchor="middle" font-size="10" fill="#A5D6A7">Patterns may reveal cosmic truths</text>
   <text x="670" y="210" text-anchor="middle" font-size="10" fill="#A5D6A7">Signal strength varies with intent</text>
   
-  <text x="670" y="250" text-anchor="middle" font-size="10" fill="#A5D6A7">Alpha sector patterns decoded</text>
-  <text x="670" y="270" text-anchor="middle" font-size="10" fill="#A5D6A7">Beta sector patterns pending</text>
-  <text x="670" y="290" text-anchor="middle" font-size="10" fill="#A5D6A7">Delta sector patterns missing</text>
-  
   <!-- Title and subtitle -->
   <text x="400" y="50" text-anchor="middle" class="title">Celestial Cipher</text>
   <text x="400" y="80" text-anchor="middle" class="subtitle">Whispers among the stars hold ancient secrets</text>
   
-  <!-- Subtle clues -->
-  <text x="400" y="570" text-anchor="middle" font-size="10" fill="#9E9E9E">Brightness speaks in dots and dashes</text>
-  <text x="400" y="585" text-anchor="middle" font-size="10" fill="#9E9E9E">The stars form constellations familiar to human eyes</text>
 </svg>
