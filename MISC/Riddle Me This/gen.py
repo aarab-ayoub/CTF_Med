@@ -7,9 +7,9 @@ TOKEN = "8118975932:AAEx5L5lnJTxncPKmlqud4j08qv0Y4m7fIQ"
 
 RIDDLES = {
     "riddle1": {
-        "question": "I am concealed in what you seek, yet I'm right before your eyes. I am what connects the beginning to the end, but not what's in between. What ASCII value am I?",
-        "answer": "123",
-        "flag": "M3D{0p3n_cUrLy_br4c3}"
+        "question": "How do you go from 98 to 720 using just one letter?",
+        "answer": "x",
+        "flag": "MED{98x7=720}"
     },
     "riddle2": {
         "question": "Solve this cryptarithmetic puzzle: SEND + MORE = MONEY (Each letter represents a unique digit from 0-9)",
@@ -17,55 +17,10 @@ RIDDLES = {
         "flag": "M3D{9567+1085=10652}"
     },
     "riddle3": {
-        "question": "Find the missing 5-letter word: 'I am a fruit when whole. Remove my first letter, I'm a crime. Remove my first two letters, I'm an animal. Remove my first and last letters, I'm a form of music.' What am I?",
-        "answer": "grape",
-        "flag": "M3D{gr4p3_m3t4m0rph0s1s}"
+        "question": "OM was in the final 2 time what is the team that beaten them?",
+        "answer": "Crvena_zvezda",
+        "flag": "MED{Crvena_zvezda}"
     },
-    "riddle4": {
-        "question": "What's the next sequence in this pattern?: 10, 11, 12, 13, 14, 15, 16, 17, 20, 21, 22...",
-        "answer": "23",
-        "flag": "M3D{0ct4l_5y5t3m_h4ck3r}"
-    },
-    "riddle5": {
-        "question": "Decrypt this: '76 61 70 6F 72 77 61 76 65' (Hint: It's not ASCII directly)",
-        "answer": "vaporwave",
-        "flag": "M3D{h3x_2_4sc11_c0nv3rt3r}"
-    },
-    "riddle6": {
-        "question": "I am a 4-digit number. My first digit is 4 times my second digit. My third digit is 3 more than my second digit. My last digit is twice my third digit. What number am I?",
-        "answer": "8362",
-        "flag": "M3D{l0g1c4l_numb3r_r3l4t10n5}"
-    },
-    "riddle7": {
-        "question": "Using only the letters ABCDEFG and each letter exactly once, what 7-letter English word can you form that is related to computer security?",
-        "answer": "defaced",
-        "flag": "M3D{w3b51t3_d3f4c3d_ch4ll3ng3}"
-    },
-    "riddle8": {
-        "question": "I'm hiding in plain sight. The key is: 'The quick brown fox jumps over the lazy dog'. The lock is: 'kyv hlztb sifne wfo aldgj fmvi kyv crqp ufx'. What's the secret?",
-        "answer": "atbash",
-        "flag": "M3D{r3v3rs3_4lph4b3t_c1ph3r}"
-    },
-    "riddle9": {
-        "question": "Compute the SHA-256 hash of 'cybersecurity' and give me only the first 6 characters of the hash.",
-        "answer": "f99a2e",
-        "flag": "M3D{h4sh_c0l1s10n_ma5t3r}"
-    },
-    "riddle10": {
-        "question": "What 5-letter word becomes shorter when you add two letters to it?",
-        "answer": "short",
-        "flag": "M3D{w0rd_p4r4d0x_l0g1c}"
-    },
-    "riddle11": {
-        "question": "What's the value of the following expression? 2^(2^(2^0)) - 1",
-        "answer": "15",
-        "flag": "M3D{3xp0n3nt14l_t0w3r_s0lv3r}"
-    },
-    "riddle12": {
-        "question": "What is the next line in this pattern?\n1\n11\n21\n1211\n111221\n?",
-        "answer": "312211",
-        "flag": "M3D{l00k_4nd_s4y_s3qu3nc3}"
-    }
 }
 
 # Store active user riddles
@@ -92,7 +47,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "/riddle - Get a random riddle\n"
         "/answer [your_answer] - Submit your answer\n"
         "/hint - Get a hint for the current riddle\n"
-        "/skip - Skip the current riddle\n"
+        # "/skip - Skip the current riddle\n"
         "/status - Check your progress",
         parse_mode="Markdown"
     )
