@@ -7,6 +7,6 @@
 
 
 ---
-titanic 
+<!-- titanic 
 41.725556, -49.946944
-https://geohack.toolforge.org/geohack.php?pagename=Wreck_of_the_Titanic&params=41_43_32_N_49_56_49_W_scale:5000000
+https://geohack.toolforge.org/geohack.php?pagename=Wreck_of_the_Titanic&params=41_43_32_N_49_56_49_W_scale:5000000 -->
