@@ -1,4 +1,4 @@
-# The Corrupted Memory Dump
+# ez Corrupted Memory Dump
 
 "Our server was hacked, and the attacker left behind a corrupted memory dump. We managed to extract this suspicious file, but it’s not what it seems. The flag is hidden deep within the dump, but beware of decoys and misleading data!"
 
