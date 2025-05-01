@@ -3,7 +3,7 @@ import os
 import re
 import subprocess
 
-os.chdir("l3jeb")
+os.chdir("Maze")
 print("Welcome to Sanitization Maze!")
 print("Find all flag parts and combine them to escape.")
 print("WARNING: Command sanitization is active!\n")
@@ -14,33 +14,37 @@ BANNED_COMMANDS = ['find', 'grep', 'cat', 'more', 'less', 'head', 'tail', 'strin
 found_parts = []
 
 def sanitize_command(cmd):
+    # Check for banned characters
     for char in BANNED_CHARS:
         if char in cmd:
-            return None, "Sanitization error: Character '{}' is not allowed!".format(char)
+            return None, f"Sanitization error: Character '{char}' is not allowed!"
     
+    # Check for banned commands
     cmd_parts = cmd.split()
     if not cmd_parts:
         return None, "Empty command"
     
     main_command = cmd_parts[0]
     if main_command in BANNED_COMMANDS:
-        return None, "Sanitization error: Command '{}' is blocked!".format(main_command)
+        return None, f"Sanitization error: Command '{main_command}' is blocked!"
     
+    # Only allow certain commands
     allowed_commands = ['ls', 'cd', 'pwd', 'echo', 'file', 'wc', 'du', 'df']
     if main_command not in allowed_commands:
-        return None, "Command not recognized: '{}'".format(main_command)
+        return None, f"Command not recognized: '{main_command}'"
     
     return cmd, None
 
 def check_for_flag_parts(output):
+    # Look for flag patterns in command output
     flag_pattern = r'CTF\{[a-zA-Z0-9_!]+\}'
     flags = re.findall(flag_pattern, output)
     
     for flag in flags:
         if flag not in found_parts:
             found_parts.append(flag)
-            print("\n[!] Flag part found: {}".format(flag))
-            print("[!] You've found {}/5 flag parts\n".format(len(found_parts)))
+            print(f"\n[!] Flag part found: {flag}")
+            print(f"[!] You've found {len(found_parts)}/5 flag parts\n")
 
 while True:
     try:
@@ -56,9 +60,10 @@ while True:
             
         if cmd.lower() == "combine":
             if len(found_parts) < 5:
-                print("You've only found {}/5 flag parts! Keep searching!".format(len(found_parts)))
+                print(f"You've only found {len(found_parts)}/5 flag parts! Keep searching!")
             else:
                 print("Congratulations! You've combined all flag parts!")
+                print("The complete flag is: CTF{s4n1t1z3d_m4z3_0f_d00m!}")
             continue
             
         sanitized_cmd, error = sanitize_command(cmd)
@@ -66,15 +71,16 @@ while True:
             print(error)
             continue
             
+        # Execute the command
         try:
             output = subprocess.check_output(sanitized_cmd, shell=True, stderr=subprocess.STDOUT, text=True)
             print(output.strip())
             check_for_flag_parts(output)
         except subprocess.CalledProcessError as e:
-            print("Command failed: {}".format(e.output.strip()))
+            print(f"Command failed: {e.output.strip()}")
             
     except KeyboardInterrupt:
         print("\nExiting Sanitization Maze. Better luck next time!")
         break
     except Exception as e:
-        print("Error: {}".format(str(e)))
+        print(f"Error: {str(e)}")
