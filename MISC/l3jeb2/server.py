@@ -76,7 +76,7 @@ def start_server():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
-    host = '127.0.0.1'
+    host = '0.0.0.0'
     port = 9999
     
     server.bind((host, port))
