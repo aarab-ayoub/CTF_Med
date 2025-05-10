@@ -64,6 +64,7 @@ def handle_client(client_socket):
             # Obfuscate the response a bit
 			
             response = f"\ncontent: {content}\n\n" if random.randint(0, 1) == 0 else f"\ndata: {content}\n\n"
+            client_socket.send(f"\nAccessing: {sanitized_path}\n\n{content}\n\n".encode())
             client_socket.send(response.encode())
             client_socket.send(b"Enter another path (or 'exit' to quit): ")
             
