@@ -10,9 +10,7 @@
 - **Hint**: "Check the lost+found directory."  
 
 **Challenge 3: Wireshark Traffic Analysis (Easy)** // TODO by n0rddin  
-- **Description**: A PCAP file (`traffic.pcap`) contains an exfiltrated flag via DNS tunneling.  
-- **Skills**: Wireshark filters, DNS exfiltration.  
-- **Hint**: "Look for unusually long DNS queries."  
+
 
 **Challenge 4: Ransomware Artifacts (Hard)**  //TODO
 - **Description**: A ransomware-encrypted file (`secret.docx.enc`) and memory dump. Find the decryption key.  
