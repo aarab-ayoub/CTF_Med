@@ -2,6 +2,7 @@ import os
 import re
 import socket
 import random
+import threading
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -88,7 +89,10 @@ def start_server():
         while True:
             client, addr = server.accept()
             print(f"[*] Accepted connection from {addr[0]}:{addr[1]}")
-            handle_client(client)
+            
+            client_thread = threading.Thread(target=handle_client, args=(client,))
+            client_thread.daemon = True  
+            client_thread.start()
     except KeyboardInterrupt:
         print("[*] Server shutting down")
     finally:
